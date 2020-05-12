@@ -4,7 +4,7 @@ This is project:
 0x19. C - Stacks, Queues - LIFO, FIFO
 **************************************************
 
-Name: JOSE VALLEJO
+Name: JOSE VALLEJO CONTRERAS
 Email: josealfredovallejo@hotmail.com
 
 Name: RONNIE BARRIOS M.
