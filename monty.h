@@ -50,6 +50,8 @@ typedef struct glb_var
 	stack_t data;
 	instruction_t fun;
 	char **strs_lines;
+	char **argvs;
+	int argc;
 	
 } glb_v;
 
@@ -62,6 +64,7 @@ int _strchr_count(char *s, char c);
 char **free_dp(char **line);
 void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number);
 void print_dp(char **dp);
+int check_argc(void);
 
 /* funtions for stack operatios */
 void _push(stack_t **stack, unsigned int line_number);

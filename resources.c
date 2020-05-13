@@ -87,16 +87,15 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
-    {"add", _add},
-    {"nop", _nop},
-    {NULL, NULL}
+		{"add", _add},
+		{"nop", _nop},
+		{NULL, NULL}
 	};
 
 	int i = 0;
 
-  if (s == NULL)
-    return(NULL);
-
+  if (s != NULL)
+  {
 	while (ops[i].opcode != NULL)
 	{
 		if (strcmp(s, ops[i].opcode) == 0)
@@ -104,6 +103,8 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 		i++;
 	}
 	return (ops[i].f);
+  }
+  return (NULL);
 }
 
 /**
