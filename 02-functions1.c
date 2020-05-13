@@ -1,5 +1,5 @@
 #include "monty.h"
-
+glb_v glb;
 /**
 * _push - it adds an element to a stack.
 * @stack: db-pointer to a stack structure.
@@ -10,7 +10,7 @@ void _push(stack_t **stack, unsigned int line_number)
 {
   (void)stack;
 	(void)line_number;
-	printf("funtion _push\n");
+	printf("_push in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -24,7 +24,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("funtion _pall\n");
+	printf("_pall in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -38,7 +38,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("funtion _pint\n");
+	printf("_pint in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -52,7 +52,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("funtion _pop\n");
+	printf("_pop in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -66,5 +66,5 @@ void _swap(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("funtion _swap\n");
+	printf("_swap in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }

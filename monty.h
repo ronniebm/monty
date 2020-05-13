@@ -11,6 +11,7 @@
 /* Global var */
 #define DELIMIT " \t\r\n\a\""
 #define BUFF_MAX 1024
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,6 +40,20 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * 
+ * 
+ */
+typedef struct glb_var
+{
+	stack_t data;
+	instruction_t fun;
+	char **strs_lines;
+	
+} glb_v;
+
+extern glb_v glb;
 
 /* funtions work flow, main funtions */
 char *read_textfile(const char *filename, size_t letters);

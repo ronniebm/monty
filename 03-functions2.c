@@ -1,4 +1,5 @@
 #include "monty.h"
+glb_v glb;
 
 /**
  * _add - it adds an element.
@@ -10,7 +11,7 @@ void _add(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("funtion _add\n");
+	printf("_add in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -24,5 +25,5 @@ void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("funtion _nop\n");
+	printf("_nop in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }

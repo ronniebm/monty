@@ -1,4 +1,5 @@
 #include "monty.h"
+glb_v glb;
 
 /**
  * main - main funtion
@@ -9,10 +10,9 @@
 
 int main(int argc, char **argv)
 {
-	char *code = NULL, **n_lines, **strs;
+	char *code = NULL, **n_lines;
 	stack_t *head = NULL;
-	void (*fun)(stack_t **stack, unsigned int line_number);
-
+	
 	if (argc != 2)
 	{
 		dprintf(2, "Usage: %s filename\n", argv[0]);
@@ -26,13 +26,14 @@ int main(int argc, char **argv)
 	/* split in string each line of the file */
 	while (*n_lines != NULL)
 	{
-		strs = split_string(*n_lines, DELIMIT, _strchr_count(*n_lines, ' '));
+		glb.strs_lines = split_string(*n_lines, DELIMIT, _strchr_count(*n_lines, ' '));
 		/* print_dp(strs);*/
-		fun = get_op_func(strs[0]);
+		glb.fun.f = get_op_func(glb.strs_lines[0]);
 		/* CONDICIONAL PARA VALIDAR */
-		if (fun != NULL)
+		if (glb.fun.f != NULL)
 		{
-			fun(&head, 8);
+			glb.fun.f(&head, 8);
+
 		}
 		n_lines++;
 		/* free_dp(strs); */
