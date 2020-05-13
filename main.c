@@ -3,7 +3,7 @@
 /**
  * main - main funtion
  * @argc: number of arguments
- * @av: argumens passed to funtion in not interactive mode
+ * @argv: argumens passed to funtion in not interactive mode
  * Return: Always a inter number
  */
 
@@ -24,10 +24,10 @@ int main(int argc, char **argv)
 	/* split each line of the file */
 	n_lines = split_string(code, "\n", _strchr_count(code, '\n'));
 	/* split in string each line of the file */
-	while(*n_lines != NULL)
+	while (*n_lines != NULL)
 	{
 		strs = split_string(*n_lines, DELIMIT, _strchr_count(*n_lines, ' '));
-		//print_dp(strs);
+		/* print_dp(strs);*/
 		fun = get_op_func(strs[0]);
 		/* CONDICIONAL PARA VALIDAR */
 		if (fun != NULL)
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 			fun(&head, 8);
 		}
 		n_lines++;
-		//free_dp(strs);
-    }
+		/* free_dp(strs); */
+	}
 	return (0);
 }
