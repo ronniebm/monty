@@ -67,6 +67,7 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number);
 void print_dp(char **dp);
 int str_is_num(char *str);
 int check_argc(void);
+void free_dlistint(stack_t *head);
 
 
 /* funtions for stack operatios */

@@ -54,5 +54,6 @@ int main(int argc, char **argv)
 	}
 	fclose(fp);
 	free(line);
+	free_dlistint(head);
 	return (0);
 }

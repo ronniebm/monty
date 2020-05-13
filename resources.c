@@ -54,23 +54,25 @@ return (count + 3); /*se suma 3 adicional*/
 
 
 /**
- * free_dp - free all file
- * @line: double pointer to free
- *
- * Return: ptr null
+ * free_dlistint - free double linked list
+ * @head: head of linked list
+ * Return: void
  */
-char **free_dp(char **line)
+void free_dlistint(stack_t *head)
 {
-	int x;
+	stack_t *aux = NULL;
 
-	for (x = 0; line[x]; x++)
+	if (head != NULL)
 	{
-		free(line[x]);
-		line[x] = NULL;
+		while (head != NULL)
+		{
+			aux = head;
+			head = (head)->next;
+			free(aux);
+		}
+		head = NULL;
+		aux = NULL;
 	}
-	free(line);
-	line = NULL;
-	return (NULL);
 }
 
 /**
