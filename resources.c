@@ -1,5 +1,5 @@
 #include "monty.h"
-
+glb_v glb;
 /**
  * split_string - it separates an string.
  *
@@ -10,13 +10,13 @@
  */
 char **split_string(char *string, char *delimiter, int buffer)
 {
-  int count = 0;
+	int count = 0;
 	char *token;
 	char **params = malloc(buffer * sizeof(char *));
 
 	if (params == NULL)
 	{
-    perror("Unable to allocate params");
+		perror("Unable to allocate params");
 		return (NULL);
 	}
 	token = strtok(string, delimiter);
@@ -24,18 +24,16 @@ char **split_string(char *string, char *delimiter, int buffer)
 	{
 		params[count] = token;
 		token = strtok(NULL, delimiter);
-    count++;
+	count++;
 	}
 	params[count] = NULL;
 	return (params);
 }
 
-
 /**
  * _strchr_count - it returns an address of first character match.
  * @s: char pointer variable.
  * @c: char to find.
- *
  * Return: an address.
  */
 int _strchr_count(char *s, char c)
@@ -44,14 +42,12 @@ int i = 0, count = 0;
 
 while (s[i] != '\0')
 {
-  if (s[i] == c)
-    count++;
-  i++;
+	if (s[i] == c)
+	count++;
+	i++;
 }
-//return (count)
 return (count + 3); /*se suma 3 adicional*/
 }
-
 
 /**
  * free_dlistint - free double linked list
@@ -78,7 +74,6 @@ void free_dlistint(stack_t *head)
 /**
  * get_op_func - selects the math operation type.
  * @s: operator simbol.
- *
  * Return: pointer to specified function.
  */
 void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
@@ -96,32 +91,32 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 
 	int i = 0;
 
-  if (s != NULL)
-  {
+	if (s != NULL)
+	{
 	while (ops[i].opcode != NULL)
 	{
 		if (strcmp(s, ops[i].opcode) == 0)
 			return (ops[i].f);
 		i++;
 	}
-  }
-  return (NULL);
+	}
+	return (NULL);
 }
 
 /**
  * print_dp - prints content of dpointer.
  * @dp: double pointer.
- *
  * Return: void.
  */
 void print_dp(char **dp)
 {
-  int i = 0;
-  printf("\n*******start********\n");
-  while (dp[i] != NULL)
-  {
-    printf("%s\n", dp[i]);
-    i++;
-  }
-  printf("\n*******stop********\n");
+	int i = 0;
+
+	printf("\n*******start********\n");
+	while (dp[i] != NULL)
+	{
+		printf("%s\n", dp[i]);
+		i++;
+	}
+	printf("\n*******stop********\n");
 }

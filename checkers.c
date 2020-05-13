@@ -1,9 +1,7 @@
 #include "monty.h"
-glb_v glb;
-
 /**
- * 
- * 
+ * check_argc - main funtions
+ * Return: integer number
  */
 int check_argc(void)
 {

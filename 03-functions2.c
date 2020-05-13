@@ -1,6 +1,5 @@
 #include "monty.h"
 glb_v glb;
-
 /**
  * _add - it adds an element.
  * @stack: db-pointer to a stack structure.
@@ -11,9 +10,11 @@ void _add(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("_add in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
-}
+	char *s1 = glb.strs_lines[0];
+	char *s2 = glb.strs_lines[1];
 
+	printf("_add in argv0 is %s y argv1 is %s\n", s1, s2);
+}
 
 /**
  * _nop - Monty's Nop function.
@@ -25,5 +26,8 @@ void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("_nop in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	char *s1 = glb.strs_lines[0];
+	char *s2 = glb.strs_lines[1];
+
+	printf("_nop in argv0 is %s y argv1 is %s\n", s1, s2);
 }

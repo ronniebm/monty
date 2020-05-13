@@ -1,5 +1,5 @@
 #include "monty.h"
-
+glb_v glb;
 /**
  * read_textfile - funtion for read file
  * @filename: name of file
@@ -20,9 +20,9 @@ char *read_textfile(const char *filename, size_t letters)
 	fb = open(filename, O_RDONLY);
 	if (fb == -1)
 		return (0);
-	
+
 	/* if fauilure read file return 0 */
-	//read_int = getline(&buf, &buff_size, fb);
+
 	read_int = read(fb, buf, letters);
 	if (read_int == -1)
 		return (0);
@@ -48,12 +48,12 @@ int str_is_num(char *str)
 	/*checking negative sign*/
 	if (str[0] == '-')
 		i = 1;
-	
+
 	while (str[i] != '\0')
 	{
 		if (isdigit(str[i]) == 0)
 			counter++;
-	i++;
+		i++;
 	}
 	return (counter);
 }

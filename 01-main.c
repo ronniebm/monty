@@ -13,13 +13,13 @@ int main(int argc, char **argv)
 	size_t bufer_len = 0;
 	char *line = NULL;
 	stack_t *head = NULL;
+	unsigned int count_line = 0;
+
 	glb.argvs = argv;
 	glb.argc = argc;
-	unsigned int count_line = 0;
-	
 	check_argc();
-	/* paso 1, open file */
-	if ((fp = fopen(argv[1], "r")) == NULL)
+	fp = fopen(argv[1], "r");
+	if (fp == NULL)
 	{
 		dprintf(2, "Error: Can't open file %s", glb.argvs[1]);
 		exit(EXIT_FAILURE);
@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 			printf("L%d: unknown instruction %s\n", count_line, glb.strs_lines[0]);
 			fclose(fp);
 			free(line);
-			free_dlistint(head);
 			free(glb.strs_lines);
 			exit(EXIT_FAILURE);
 		}
@@ -45,8 +44,7 @@ int main(int argc, char **argv)
 		read = getline(&line, &bufer_len, fp);
 		free(glb.strs_lines);
 	}
-	if (head != NULL)
-		free_dlistint(head);
+	free_dlistint(head);
 	fclose(fp);
 	free(line);
 	return (0);
