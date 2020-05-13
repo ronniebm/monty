@@ -37,7 +37,7 @@ void _push(stack_t **stack, unsigned int line_number)
 
 
 /**
-* _pall - it prints a list.
+* _pall - it prints a stack list.
 * @stack: db-pointer to a stack structure.
 * @line_number: number of the line.
 * Return: void.
@@ -46,7 +46,17 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+
+	if (stack == NULL)
+		return;
+
+	stack_t *temp = *stack;
+
+	while (temp)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
 }
 
 
