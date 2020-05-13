@@ -8,12 +8,13 @@
  */
 void _add(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
-	char *s1 = glb.strs_lines[0];
-	char *s2 = glb.strs_lines[1];
+	char *s1, *s2;
 
-	printf("_add in argv0 is %s y argv1 is %s\n", s1, s2);
+	s1 = glb.strs_lines[0];
+	s2 = glb.strs_lines[1];
+
+	if(*stack == NULL && line_number != 80)
+		printf("_add in argv0 is %s y argv1 is %s\n", s1, s2);
 }
 
 /**
@@ -24,10 +25,11 @@ void _add(stack_t **stack, unsigned int line_number)
  */
 void _nop(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
-	char *s1 = glb.strs_lines[0];
-	char *s2 = glb.strs_lines[1];
+	char *s1, *s2;
 
-	printf("_nop in argv0 is %s y argv1 is %s\n", s1, s2);
+	s1 = glb.strs_lines[0];
+	s2 = glb.strs_lines[1];
+
+	if(*stack == NULL && line_number != 80)
+		printf("_nop in argv0 is %s y argv1 is %s\n", s1, s2);
 }

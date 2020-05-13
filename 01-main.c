@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
-		dprintf(2, "Error: Can't open file %s", glb.argvs[1]);
+		fprintf(stderr, "Error: Can't open file %s", glb.argvs[1]);
 		exit(EXIT_FAILURE);
 	}
 	/* step 2: read the first line in the file */

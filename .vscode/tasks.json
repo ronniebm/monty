@@ -11,6 +11,7 @@
 				"-Wextra",
 				"-Werror",
 				"-pedantic",
+				"-std=c90",
 				"${workspaceFolder}/*.c",
 				"-o",
 				"${workspaceFolder}/monty"
