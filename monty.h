@@ -62,6 +62,7 @@ int _strchr_count(char *s, char c);
 char **free_dp(char **line);
 void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number);
 void print_dp(char **dp);
+int str_is_num(char *str);
 
 /* funtions for stack operatios */
 void _push(stack_t **stack, unsigned int line_number);
