@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		dprintf(2, "Usage: %s filename\n", argv[0]);
-		exit(1);
+		exit(-1);
 	}
 	/* paso 1 */
 	code = read_textfile(argv[1], 1024);
