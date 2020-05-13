@@ -44,23 +44,18 @@ void _push(stack_t **stack, unsigned int line_number)
 */
 void _pall(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
-	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
-	/*
-	(void)line_number;
 	stack_t *temp;
 
 	temp = *stack;
 
-	if (stack == NULL)
+	if (stack == NULL && line_number != 0)
 		return;
 
 	while (temp)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
-	}*/
+	}
 }
 
 
