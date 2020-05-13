@@ -7,7 +7,7 @@
  * Return: Always a inter number
  */
 
-int nomain(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	char *code = NULL, **n_lines, **strs;
 	stack_t *head = NULL;

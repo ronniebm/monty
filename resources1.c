@@ -10,13 +10,13 @@
  */
 char **split_string(char *string, char *delimiter, int buffer)
 {
-  int count = 0;
+int count = 0;
 	char *token;
 	char **params = malloc(buffer * sizeof(char *));
 
 	if (params == NULL)
 	{
-    perror("Unable to allocate params");
+	perror("Unable to allocate params");
 		return (NULL);
 	}
 	token = strtok(string, delimiter);
@@ -24,7 +24,7 @@ char **split_string(char *string, char *delimiter, int buffer)
 	{
 		params[count] = token;
 		token = strtok(NULL, delimiter);
-    count++;
+	count++;
 	}
 	params[count] = NULL;
 	return (params);
@@ -44,9 +44,9 @@ int i = 0, count = 0;
 
 while (s[i] != '\0')
 {
-  if (s[i] == c)
-    count++;
-  i++;
+if (s[i] == c)
+	count++;
+i++;
 }
 //return (count)
 return (count + 3); /*se suma 3 adicional*/
