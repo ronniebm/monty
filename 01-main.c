@@ -10,33 +10,49 @@ glb_v glb;
 
 int main(int argc, char **argv)
 {
-	char *code = NULL, **n_lines;
+	FILE *fp = NULL;
+	ssize_t read = 0;
+	size_t bufer_len = 0;
+	char *line = NULL;
 	stack_t *head = NULL;
+	glb.argvs = argv;
+	glb.argc = argc;
+	unsigned int count_line = 0;
 	
-	if (argc != 2)
+	if (check_argc() == 1)
 	{
 		dprintf(2, "Usage: %s filename\n", argv[0]);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
-	/* paso 1 */
-	code = read_textfile(argv[1], 1024);
-
-	/* split each line of the file */
-	n_lines = split_string(code, "\n", _strchr_count(code, '\n'));
-	/* split in string each line of the file */
-	while (*n_lines != NULL)
+	/* paso 1, open file */
+	if ((fp = fopen(argv[1], "r")) == NULL)
 	{
-		glb.strs_lines = split_string(*n_lines, DELIMIT, _strchr_count(*n_lines, ' '));
-		/* print_dp(strs);*/
+		dprintf(2, "Error: Can't open %s", glb.argvs[1]);
+		exit(EXIT_FAILURE);
+	}
+
+	/* step 2: read the first line in the file */
+	read = getline(&line, &bufer_len, fp);
+	/* read each line of file opened */
+	while (read >= 0)
+	{
+		count_line++;
+		//printf("line number %d is\n", count_line);
+		//printf("%s", line);
+
+		glb.strs_lines = split_string(line, DELIMIT, _strchr_count(line, ' '));
+		//print_dp(glb.strs_lines);
 		glb.fun.f = get_op_func(glb.strs_lines[0]);
 		/* CONDICIONAL PARA VALIDAR */
 		if (glb.fun.f != NULL)
 		{
-			glb.fun.f(&head, 8);
+			glb.fun.f(&head, count_line);
 
 		}
-		n_lines++;
-		/* free_dp(strs); */
+		read = getline(&line, &bufer_len, fp);
+		free(glb.strs_lines);
 	}
+	fclose(fp);
+	free(line);
 	return (0);
 }
