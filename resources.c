@@ -101,10 +101,9 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 	while (ops[i].opcode != NULL)
 	{
 		if (strcmp(s, ops[i].opcode) == 0)
-			break;
+			return (ops[i].f);
 		i++;
 	}
-	return (ops[i].f);
   }
   return (NULL);
 }

@@ -9,8 +9,8 @@ int check_argc(void)
 {
 	if (glb.argc != 2)
 	{
-		dprintf(2, "Usage: %s filename\n", glb.argvs[0]);
-		return (1);
+		dprintf(2, "Usage: monty filename\n");
+		exit(EXIT_FAILURE);
 	}
 	return (0);
 }
