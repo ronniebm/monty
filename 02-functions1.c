@@ -9,7 +9,7 @@ glb_v glb;
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node;
-	
+
 	/*input error cases*/
 	if (glb.strs_lines[1] == NULL || str_is_num(glb.strs_lines[1]) != 0)
 	{
@@ -46,7 +46,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("_pall in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -60,7 +60,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("_pint in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -74,7 +74,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("_pop in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
 
 
@@ -88,5 +88,5 @@ void _swap(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	printf("_swap in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
 }
