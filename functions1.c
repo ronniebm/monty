@@ -8,9 +8,9 @@
 */
 void _push(stack_t **stack, unsigned int line_number)
 {
-  (void)stack;
-  (void)line_number;
-  printf("funtion _push\n");
+	(void)stack;
+	(void)line_number;
+	printf("funtion _push\n");
 }
 
 
@@ -22,24 +22,23 @@ void _push(stack_t **stack, unsigned int line_number)
 */
 void _pall(stack_t **stack, unsigned int line_number)
 {
-  (void)stack;
-  (void)line_number;
-  printf("funtion _pall\n");
+	(void)stack;
+	(void)line_number;
+	printf("funtion _pall\n");
 }
 
 
 /**
-* _pi
-nt - Monty's pint function.
+* _pint - Monty's pint function.
 * @stack: db-pointer to a stack structure.
 * @line_number: number of the line.
 * Return: void.
 */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-    (void)stack;
-    (void)line_number;
-    printf("funtion _pint\n");
+	(void)stack;
+	(void)line_number;
+	printf("funtion _pint\n");
 }
 
 
@@ -51,9 +50,9 @@ void _pint(stack_t **stack, unsigned int line_number)
 */
 void _pop(stack_t **stack, unsigned int line_number)
 {
-  (void)stack;
-  (void)line_number;
-  printf("funtion _pop\n");
+	(void)stack;
+	(void)line_number;
+	printf("funtion _pop\n");
 }
 
 
@@ -65,7 +64,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 */
 void _swap(stack_t **stack, unsigned int line_number)
 {
-  (void)stack;
-  (void)line_number;
-  printf("funtion _swap\n");
+	(void)stack;
+	(void)line_number;
+	printf("funtion _swap\n");
 }
