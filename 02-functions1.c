@@ -8,9 +8,31 @@ glb_v glb;
 */
 void _push(stack_t **stack, unsigned int line_number)
 {
-  (void)stack;
-	(void)line_number;
-	printf("_push in argv0 is %s y argv1 is %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	stack_t *node;
+	
+	/*input error cases*/
+	if (glb.strs_lines[1] == NULL || str_is_num(glb.strs_lines[1]) != 0)
+	{
+		printf("L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	node = malloc(sizeof(stack_t));
+	if (node == NULL)
+	{
+		printf("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	node->n = atoi(glb.strs_lines[1]);
+	node->prev = NULL;
+	node->next = *stack;
+
+	if (*stack != NULL)
+	{
+		(*stack)->prev = node;
+	}
+
+	*stack = node;
 }
 
 
