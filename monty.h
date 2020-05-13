@@ -42,8 +42,15 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * 
- * 
+ * struct glb_var - opcode and its function
+ * @data: the opcode
+ * @fun: function to handle the opcode
+ * @strs_lines: absx
+ * @argvs: av
+ * @argc: agc
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct glb_var
 {
@@ -52,10 +59,12 @@ typedef struct glb_var
 	char **strs_lines;
 	char **argvs;
 	int argc;
-	
+
 } glb_v;
 
 extern glb_v glb;
+glb_v glb;
+
 
 /* funtions work flow, main funtions */
 char *read_textfile(const char *filename, size_t letters);

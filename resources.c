@@ -1,5 +1,5 @@
 #include "monty.h"
-glb_v glb;
+
 /**
  * split_string - it separates an string.
  *

@@ -1,5 +1,5 @@
 #include "monty.h"
-glb_v glb;
+
 /**
  * _add - it adds an element.
  * @stack: db-pointer to a stack structure.

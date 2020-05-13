@@ -1,5 +1,5 @@
 #include "monty.h"
-glb_v glb;
+
 /**
  * main - main funtion
  * @argc: number of arguments
