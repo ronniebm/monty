@@ -8,13 +8,29 @@
  */
 void _add(stack_t **stack, unsigned int line_number)
 {
-	char *s1, *s2;
+	int result;
+	stack_t *temp = *stack;
+	char string_line[20];
 
-	s1 = glb.strs_lines[0];
-	s2 = glb.strs_lines[1];
-
-	if (*stack == NULL && line_number != 80)
-		printf("_add in argv0 is %s y argv1 is %s\n", s1, s2);
+	sprintf(string_line, "%d", line_number);
+	if ((*stack) && (*stack)->next)
+	{
+		result = (*stack)->next->n;
+		result += (*stack)->n;
+		(*stack)->next->n = result;
+		(*stack) = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(temp);
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		free_dlistint(stack);
+		fclose(glb.fp);
+		free(glb.line);
+		free(glb.strs_lines);
+		exit(EXIT_FAILURE);
+	}
 }
 
 /**
