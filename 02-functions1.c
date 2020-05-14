@@ -116,9 +116,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 void _swap(stack_t **stack, unsigned int line_number)
 {
 	int val;
-	/* char string_line[20]; */
 
-	/* sprintf(string_line, "%d", line_number); */
 	if ((*stack) && (*stack)->next)
 	{
 		val = (*stack)->next->n;

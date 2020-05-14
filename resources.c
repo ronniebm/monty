@@ -88,6 +88,7 @@ void get_op_func(char *s, unsigned int n_line)
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
+		{"div", _div},
 		{NULL, NULL}
 	};
 
