@@ -46,8 +46,7 @@ typedef struct instruction_s
  * @data: the opcode
  * @fun: function to handle the opcode
  * @strs_lines: absx
- * @argvs: av
- * @argc: agc
+ * @fp: agc
  *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO Holberton project
@@ -57,8 +56,7 @@ typedef struct glb_var
 	stack_t data;
 	instruction_t fun;
 	char **strs_lines;
-	char **argvs;
-	int argc;
+	FILE *fp;
 
 } glb_v;
 
@@ -71,10 +69,10 @@ char *read_textfile(const char *filename, size_t letters);
 char **split_string(char *string, char *delimiter, int buffer);
 int _strchr_count(char *s, char c);
 char **free_dp(char **line);
-void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number);
+void get_op_func(char *s, unsigned int n_line, stack_t **head);
 void print_dp(char **dp);
 int str_is_num(char *str);
-int check_argc(void);
+int check_argc(int argc);
 void free_dlistint(stack_t *head);
 
 

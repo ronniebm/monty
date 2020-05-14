@@ -1,11 +1,12 @@
 #include "monty.h"
 /**
  * check_argc - main funtions
+ * @argc: number of arguments
  * Return: integer number
  */
-int check_argc(void)
+int check_argc(int argc)
 {
-	if (glb.argc != 2)
+	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: monty filename\n");
 		exit(EXIT_FAILURE);
