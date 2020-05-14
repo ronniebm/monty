@@ -3,7 +3,7 @@ push 1
 push                 																								9
   push 3
                    pall    
-push 4
+Push 4
 
 
    #hola mundo           

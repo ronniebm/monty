@@ -107,6 +107,7 @@ void get_op_func(char *s, unsigned int n_line, stack_t **head)
 		if (strlen(s) != 0 && s[0] != '#')
 		{
 			printf("L%u: unknown instruction %s\n", n_line, s);
+			fclose(glb.fp);
 			exit(EXIT_FAILURE);
 		}
 	}
