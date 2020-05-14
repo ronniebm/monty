@@ -95,13 +95,13 @@ void _pint(stack_t **stack, unsigned int line_number)
 */
 void _pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
+	stack_t *temp = *stack;
 	char string_line[20];
 
 	sprintf(string_line, "%d", line_number);
 	if (*stack == NULL)
 	{
-		dprintf(2, "L%d: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		free_dlistint(stack);
 		fclose(glb.fp);
 		free(glb.line);
@@ -115,7 +115,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 	}
 	else
 		*stack = NULL;
-	free(tmp);
+	free(temp);
 }
 
 
@@ -127,7 +127,23 @@ void _pop(stack_t **stack, unsigned int line_number)
 */
 void _swap(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
-	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	int val;
+	char string_line[20];
+
+	sprintf(string_line, "%d", line_number);
+	if ((*stack) && (*stack)->next)
+	{
+		val = (*stack)->next->n;
+		(*stack)->next->n = (*stack)->n;
+		(*stack)->n = val;
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		free_dlistint(stack);
+		fclose(glb.fp);
+		free(glb.line);
+		free(glb.strs_lines);
+		exit(EXIT_FAILURE);
+	}
 }
