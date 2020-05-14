@@ -19,7 +19,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 		}
 		top_elemnt = (*stack);
 		(*stack) = (*stack)->next;
-		num = top_elemnt->n % (*stack)->n;
+		num = (*stack)->n % top_elemnt->n;
 		(*stack)->n = num;
 		free(top_elemnt);
 		(*stack)->prev = NULL;
