@@ -14,11 +14,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	if (glb.strs_lines[1] == NULL || str_is_num(glb.strs_lines[1]) != 0)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		free_dlistint(stack);
-		fclose(glb.fp);
-		free(glb.line);
-		free(glb.strs_lines);
-		exit(EXIT_FAILURE);
+		exit_program();
 	}
 
 	node = malloc(sizeof(stack_t));
@@ -78,11 +74,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		free_dlistint(stack);
-		fclose(glb.fp);
-		free(glb.line);
-		free(glb.strs_lines);
-		exit(EXIT_FAILURE);
+		exit_program();
 	}
 }
 
@@ -102,11 +94,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-		free_dlistint(stack);
-		fclose(glb.fp);
-		free(glb.line);
-		free(glb.strs_lines);
-		exit(EXIT_FAILURE);
+		exit_program();
 	}
 	if ((*stack)->next != NULL)
 	{
@@ -140,10 +128,6 @@ void _swap(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-		free_dlistint(stack);
-		fclose(glb.fp);
-		free(glb.line);
-		free(glb.strs_lines);
-		exit(EXIT_FAILURE);
+		exit_program();
 	}
 }

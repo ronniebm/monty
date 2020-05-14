@@ -44,6 +44,7 @@ typedef struct instruction_s
 /**
  * struct glb_var - opcode and its function.
  * @data: the opcode.
+ * @head: poninter to head in stack
  * @fun: function to handle the opcode.
  * @line: line of code in the file.
  * @strs_lines: each string in the line.
@@ -54,6 +55,7 @@ typedef struct instruction_s
  */
 typedef struct glb_var
 {
+	stack_t *head;
 	stack_t data;
 	instruction_t fun;
 	char *line;
@@ -71,11 +73,12 @@ char *read_textfile(const char *filename, size_t letters);
 char **split_string(char *string, char *delimiter, int buffer);
 int count_chr(char *s, char c);
 char **free_dp(char **line);
-void get_op_func(char *s, unsigned int n_line, stack_t **head);
+void get_op_func(char *s, unsigned int n_line);
 void print_dp(char **dp);
 int str_is_num(char *str);
 int check_argc(int argc);
 void free_dlistint(stack_t **head);
+void exit_program(void);
 
 
 /* funtions for stack operatios */

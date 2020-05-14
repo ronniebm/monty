@@ -75,10 +75,9 @@ void free_dlistint(stack_t **head)
  * get_op_func - selects the math operation type.
  * @s: operator simbol.
  * @n_line: number of line in the code.
- * @head: header of stack.
  * Return: pointer to specified function.
  */
-void get_op_func(char *s, unsigned int n_line, stack_t **head)
+void get_op_func(char *s, unsigned int n_line)
 {
 	instruction_t ops[] = {
 		{"push", _push},
@@ -99,7 +98,7 @@ void get_op_func(char *s, unsigned int n_line, stack_t **head)
 		{
 			if (strcmp(s, ops[i].opcode) == 0)
 			{
-				ops[i].f(head, n_line);
+				ops[i].f(&glb.head, n_line);
 				return;
 			}
 			i++;
@@ -107,11 +106,7 @@ void get_op_func(char *s, unsigned int n_line, stack_t **head)
 		if (strlen(s) != 0 && s[0] != '#')
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", n_line, s);
-			fclose(glb.fp);
-			free(glb.line);
-			free(glb.strs_lines);
-			free_dlistint(head);
-			exit(EXIT_FAILURE);
+			exit_program();
 		}
 	}
 }
