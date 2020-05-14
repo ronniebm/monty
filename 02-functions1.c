@@ -95,9 +95,27 @@ void _pint(stack_t **stack, unsigned int line_number)
 */
 void _pop(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
-	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	stack_t *tmp = *stack;
+	char string_line[20];
+
+	sprintf(string_line, "%d", line_number);
+	if (*stack == NULL)
+	{
+		dprintf(2, "L%d: can't pop an empty stack\n", line_number);
+		free_dlistint(stack);
+		fclose(glb.fp);
+		free(glb.line);
+		free(glb.strs_lines);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->next != NULL)
+	{
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+	}
+	else
+		*stack = NULL;
+	free(tmp);
 }
 
 
