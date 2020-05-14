@@ -10,10 +10,10 @@ int main(int argc, char **argv)
 {
 	ssize_t read = 0;
 	size_t bufer_len = 0;
-	stack_t *head = NULL;
 	unsigned int count_line = 0;
 
 	glb.line = NULL;
+	glb.head = NULL;
 	check_argc(argc);
 
 	glb.fp = fopen(argv[1], "r");
@@ -28,10 +28,10 @@ int main(int argc, char **argv)
 	{
 		count_line++;
 		glb.strs_lines = split_string(glb.line, DELIMIT, count_chr(glb.line, ' '));
-		get_op_func(glb.strs_lines[0], count_line, &head);
+		get_op_func(glb.strs_lines[0], count_line);
 		free(glb.strs_lines);
 	}
-	free_dlistint(&head);
+	free_dlistint(&glb.head);
 	fclose(glb.fp);
 	free(glb.line);
 	return (0);
