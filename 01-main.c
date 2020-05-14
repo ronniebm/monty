@@ -10,10 +10,10 @@ int main(int argc, char **argv)
 {
 	ssize_t read = 0;
 	size_t bufer_len = 0;
-	char *line = NULL;
 	stack_t *head = NULL;
 	unsigned int count_line = 0;
 
+	glb.line = NULL;
 	check_argc(argc);
 
 	glb.fp = fopen(argv[1], "r");
@@ -23,18 +23,16 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	/* step 2: read the first line in the file */
-	read = getline(&line, &bufer_len, glb.fp);
 	/* read each line of file opened */
-	while (read >= 0)
+	while ((read = getline(&glb.line, &bufer_len, glb.fp)) >= 0)
 	{
 		count_line++;
-		glb.strs_lines = split_string(line, DELIMIT, _strchr_count(line, ' '));
+		glb.strs_lines = split_string(glb.line, DELIMIT, count_chr(glb.line, ' '));
 		get_op_func(glb.strs_lines[0], count_line, &head);
-		read = getline(&line, &bufer_len, glb.fp);
 		free(glb.strs_lines);
 	}
-	free_dlistint(head);
+	free_dlistint(&head);
 	fclose(glb.fp);
-	free(line);
+	free(glb.line);
 	return (0);
 }

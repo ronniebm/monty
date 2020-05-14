@@ -14,6 +14,10 @@ void _push(stack_t **stack, unsigned int line_number)
 	if (glb.strs_lines[1] == NULL || str_is_num(glb.strs_lines[1]) != 0)
 	{
 		printf("L%u: usage: push integer\n", line_number);
+		free_dlistint(stack);
+		fclose(glb.fp);
+		free(glb.line);
+		free(glb.strs_lines);
 		exit(EXIT_FAILURE);
 	}
 

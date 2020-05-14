@@ -31,12 +31,12 @@ char **split_string(char *string, char *delimiter, int buffer)
 }
 
 /**
- * _strchr_count - it returns an address of first character match.
+ * count_chr - it returns an address of first character match.
  * @s: char pointer variable.
  * @c: char to find.
  * Return: an address.
  */
-int _strchr_count(char *s, char c)
+int count_chr(char *s, char c)
 {
 int i = 0, count = 0;
 
@@ -54,16 +54,16 @@ return (count + 3); /*se suma 3 adicional*/
  * @head: head of linked list
  * Return: void
  */
-void free_dlistint(stack_t *head)
+void free_dlistint(stack_t **head)
 {
 	stack_t *aux = NULL;
 
 	if (head != NULL)
 	{
-		while (head != NULL)
+		while (*head != NULL)
 		{
-			aux = head;
-			head = (head)->next;
+			aux = (*head);
+			*head = (*head)->next;
 			free(aux);
 		}
 		head = NULL;
@@ -108,6 +108,9 @@ void get_op_func(char *s, unsigned int n_line, stack_t **head)
 		{
 			printf("L%u: unknown instruction %s\n", n_line, s);
 			fclose(glb.fp);
+			free(glb.line);
+			free(glb.strs_lines);
+			free_dlistint(head);
 			exit(EXIT_FAILURE);
 		}
 	}
