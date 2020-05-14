@@ -12,7 +12,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 
 	if (stack_len() >= 2)
 	{
-		if ((*stack)->n == 0)
+		if ((*stack)->next->n == 0)
 		{
 			fprintf(stderr, "L%d: division by zero\n", line_number);
 			exit_program();
