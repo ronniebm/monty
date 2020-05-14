@@ -16,7 +16,7 @@ char **split_string(char *string, char *delimiter, int buffer)
 
 	if (params == NULL)
 	{
-		perror("Unable to allocate params");
+		fprintf(stderr, "Unable to allocate params");
 		return (NULL);
 	}
 	token = strtok(string, delimiter);
@@ -106,7 +106,7 @@ void get_op_func(char *s, unsigned int n_line, stack_t **head)
 		}
 		if (strlen(s) != 0 && s[0] != '#')
 		{
-			printf("L%u: unknown instruction %s\n", n_line, s);
+			fprintf(stderr, "L%u: unknown instruction %s\n", n_line, s);
 			fclose(glb.fp);
 			free(glb.line);
 			free(glb.strs_lines);

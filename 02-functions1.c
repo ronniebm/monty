@@ -13,7 +13,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	/*input error cases*/
 	if (glb.strs_lines[1] == NULL || str_is_num(glb.strs_lines[1]) != 0)
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_dlistint(stack);
 		fclose(glb.fp);
 		free(glb.line);
@@ -24,7 +24,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 	{
-		printf("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	node->n = atoi(glb.strs_lines[1]);
@@ -57,7 +57,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 
 	while (temp)
 	{
-		printf("%d\n", temp->n);
+		fprintf(stdout, "%d\n", temp->n);
 		temp = temp->next;
 	}
 }
