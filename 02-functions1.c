@@ -49,17 +49,15 @@ void _push(stack_t **stack, unsigned int line_number)
 void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-
+	(void)line_number;
 	temp = *stack;
 
-	if (stack == NULL && line_number != 0)
-		return;
-
-	while (temp)
-	{
-		fprintf(stdout, "%d\n", temp->n);
-		temp = temp->next;
-	}
+	if (stack != NULL)
+		while (temp)
+		{
+			fprintf(stdout, "%d\n", temp->n);
+			temp = temp->next;
+		}
 }
 
 
