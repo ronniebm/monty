@@ -17,10 +17,33 @@
 -   What are the most common use cases of stacks and queues
 -   What is the proper way to use global variables
 
+**3. How to use the Monty interpreter:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**a.** Clone the Github repository from your terminal:
+```
+    git clone https://github.com/ronniebm/monty.git
+```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**b.** compile with following command (gcc compiler):
+```
+    gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**c.** Example about how to run a monty ***.m**   file :
+```
+    ./monty PATH/file.m
+```
+
+**4.  Monty commands supported in this VERSION:**
+
+For more information please see the resources in topic#1.
+-   pull,  pall,  pint,  pop,  swap,  add,  nop.<br>
+
+**5.  Complementary Info to test this interpreter VERSION:**
+
+You can find monty ***.m**  files to test, in the bytecodes folder directory:<br>
+https://github.com/ronniebm/monty/tree/master/bytecodes<br>
+
+
 =======================================================================<br>
-Name: JOSE VALLEJO CONTRERAS
-Email: josealfredovallejo@hotmail.com
+Name: JOSE VALLEJO CONTRERAS.<br>Email: josealfredovallejo@hotmail.com
 
-Name: RONNIE BARRIOS M.
-Email: ronniealberto@gmail.com
-
+Name: RONNIE BARRIOS MORALES.<br>Email: ronnie.coding@gmail.com
