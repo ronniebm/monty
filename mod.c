@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
-* _div - divides the second top element of the stack by the top
+* _mod - computes the rest of the division of the second top
 * @stack: db-pointer to a stack structure.
 * @line_number: number of the line.
 * Return: void.
  */
-void _div(stack_t **stack, unsigned int line_number)
+void _mod(stack_t **stack, unsigned int line_number)
 {
 	int num;
 	stack_t *top_elemnt = NULL;
@@ -20,7 +20,7 @@ void _div(stack_t **stack, unsigned int line_number)
 	{
 		top_elemnt = (*stack);
 		(*stack) = (*stack)->next;
-		num = ((*stack)->n) / (top_elemnt->n);
+		num = (*stack)->n % top_elemnt->n;
 		(*stack)->n = num;
 		free(top_elemnt);
 		(*stack)->prev = NULL;
