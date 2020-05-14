@@ -16,7 +16,6 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	while (aux)
 	{
 		if (aux->n != 0 && isascii(aux->n))
-			/*we use putchar from stdio.h*/
 			putchar(aux->n);
 		else
 			break;
