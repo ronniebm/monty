@@ -92,6 +92,7 @@ void get_op_func(char *s, unsigned int n_line)
 		{"mul", _mul},
 		{"mod", _mod},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 
