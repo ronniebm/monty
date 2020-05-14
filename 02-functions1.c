@@ -69,9 +69,21 @@ void _pall(stack_t **stack, unsigned int line_number)
 */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
-	printf("_pall argv0: %s, argv1: %s\n", glb.strs_lines[0], glb.strs_lines[1]);
+	char string_line[20];
+	stack_t *temp = *stack;
+
+	sprintf(string_line, "%d", line_number);
+	if (*stack)
+		printf("%d\n", temp->n);
+	else
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free_dlistint(stack);
+		fclose(glb.fp);
+		free(glb.line);
+		free(glb.strs_lines);
+		exit(EXIT_FAILURE);
+	}
 }
 
 

@@ -1,12 +1,12 @@
-push 0
-push
-push					9
-  push 3
-                   pall    
-push 4
-
-
-   hola mundo           
-    push 5    
-      push    6        
-pall
+push hoalahaha 0 papita$
+bebe $
+push 2$
+  push 3$
+                     $
+                                  $
+                                  $
+push 4$
+$
+         push 5$
+                             push    6$
+$
