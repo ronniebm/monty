@@ -3,7 +3,7 @@
 
 **1. Resources**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. **About Monty:**  [< See this Website >](http://montyscoconut.github.io/about.html)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**a.** About Monty:  [< See this Website >](http://montyscoconut.github.io/about.html)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. **The Design of Monty**: [a Programming/Scripting Language.pdf (PDF)](http://www.informatik.uni-bremen.de/~hof/Monty/Monty-Watt.pdf)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. **Test this online Monty Terminal:**   [< See this Website >](http://montyscoconut.github.io/try/?page=index)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. **Compiled language Vs Interpreted language ( 6:04 min):**  [< See this Youtube VIDEO >](https://www.youtube.com/watch?v=I1f45REi3k4)
