@@ -25,22 +25,5 @@ void _add(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-		free_dlistint(stack);
-		fclose(glb.fp);
-		free(glb.line);
-		free(glb.strs_lines);
-		exit(EXIT_FAILURE);
-	}
-}
-
-/**
- * _nop - Monty's Nop function.
- * @stack: db-pointer to a stack structure.
- * @line_number: number of the line.
- * Return: void.
- */
-void _nop(stack_t **stack, unsigned int line_number)
-{
-	(void) stack;
-	(void) line_number;
+		exit_program();
 }
