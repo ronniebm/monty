@@ -36,7 +36,7 @@
 
 For more information please see the resources in topic#1.
 -   pull,  pall,  pint,  pop,  swap,  add,  nop, sub, div, mul<br>
--   mod, #
+-   mod, #, pchar, pstr, rotl, rotr.
 
 **5.  Complementary Info to test this interpreter VERSION:**
 
