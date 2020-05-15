@@ -74,7 +74,6 @@ char **split_string(char *string, char *delimiter, int buffer);
 int count_chr(char *s, char c);
 char **free_dp(char **line);
 void get_op_func(char *s, unsigned int n_line);
-void print_dp(char **dp);
 int str_is_num(char *str);
 int check_argc(int argc);
 void free_dlistint(stack_t **head);
