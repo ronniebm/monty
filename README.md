@@ -35,7 +35,8 @@
 **4.  Monty commands supported in this VERSION:**
 
 For more information please see the resources in topic#1.
--   pull,  pall,  pint,  pop,  swap,  add,  nop, sub, div<br>
+-   pull,  pall,  pint,  pop,  swap,  add,  nop, sub, div, mul<br>
+-   mod
 
 **5.  Complementary Info to test this interpreter VERSION:**
 
