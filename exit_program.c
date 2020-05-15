@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * exit_program - safe close process.
  * Return: void funtion.

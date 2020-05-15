@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * check_argc - main funtions
  * @argc: number of arguments

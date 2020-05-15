@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
 * _mod - computes the rest of the division of the second top
 * @stack: db-pointer to a stack structure.

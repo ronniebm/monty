@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
 * _sub - subtracts the top element of the stack from the second
 * @stack: db-pointer to a stack structure.

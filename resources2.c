@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * str_is_num - check if string is numeric pos or neg.
  * @str: pointer to a string.

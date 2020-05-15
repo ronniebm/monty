@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
 * _div - divides the second top element of the stack by the top
 * @stack: db-pointer to a stack structure.

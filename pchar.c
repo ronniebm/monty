@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * _pchar - print char at the top of the stack, followed by a new line.
  * @stack: double pointer to stack's head.

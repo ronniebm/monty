@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
 * _mul - mul the second top element of the stack with the top
 * @stack: db-pointer to a stack structure.
